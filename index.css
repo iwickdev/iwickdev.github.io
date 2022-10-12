@@ -19,6 +19,24 @@ body {
     overflow-wrap: break-word;
 }
 
+.tools {
+    display: grid;
+    grid-template: "tool tool";
+
+    color: white;
+
+    width: 500px;
+}
+
+.projects {
+    display: grid;
+    grid-template: "proj proj proj";
+
+    color: white;
+
+    width: 500px;
+}
+
 .links {
     display: grid;
     grid-template: "out out out";
