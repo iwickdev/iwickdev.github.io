@@ -32,9 +32,26 @@ body {
     display: grid;
     grid-template: "proj proj proj";
 
-    color: white;
-
     width: 500px;
+}
+
+.projects a:link {
+    color: white;
+    text-decoration: none;
+    border: 2px solid rgb(15, 15, 15);
+    background-color: rgb(100, 100, 100);
+}
+
+.projects a:visited {
+    color: white;
+    text-decoration: none;
+    border: 2px solid rgb(15, 15, 15);
+    background-color: rgb(100, 100, 100);
+}
+
+.projects a:hover {
+    color: black;
+    background-color: white;
 }
 
 .links {
