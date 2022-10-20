@@ -21,7 +21,7 @@ body {
 
 .tools {
     display: grid;
-    grid-template: "tool tool";
+    grid-template: "tool tool tool";
 
     color: white;
 
