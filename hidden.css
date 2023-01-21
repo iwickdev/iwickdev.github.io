@@ -1,0 +1,92 @@
+body {
+    background-color: rgb(15, 15, 15);
+}
+
+.header {
+    color: white;
+}
+
+.cookie {
+    transform: translateY(50px);
+}
+
+#scoretext {
+  transform: translateY(100px);
+  color: white;
+}
+
+#cookieimg {
+    width: 200px;
+    transition: 500ms ease-in-out;
+}
+
+#cookieimg:hover {
+    width: 220px;
+    transition: 500ms ease-in-out;
+}
+
+#cookieimg:active {
+   animation: bounce 0.5s 1;
+}
+
+@keyframes bounce {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+  
+    20% {
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  
+    40% {
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+  
+    60% {
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+  
+    80% {
+      transform: scale3d(0.97, 0.97, 0.97);
+    }
+  
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+}
+
+.fadeawayan {
+  color: greenyellow;
+  animation: fadeaway 5s 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeaway {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  10% {
+    opacity: 1;
+    transform: none;
+  }
+
+  90% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+}
