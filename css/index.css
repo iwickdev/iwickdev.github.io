@@ -1,0 +1,74 @@
+:root {
+    --background-accent: #1f1f1f;
+    --text-accent: white;
+
+    --global-font-family: Arial, serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-accent);
+}
+
+html, body {
+    height: 100%;
+}
+
+.content-box {
+    color: var(--text-accent);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+
+    height: 50%;
+    width: 60%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.summery {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    width: 100%;
+    font-family: var(--global-font-family)
+}
+
+.summery h1 {
+    margin: 0;
+    width: 100%;
+}
+
+.summery p {
+    width: 100%;
+}
+
+.avatar-image {
+    border-radius: 10px;
+    height: 50%;
+}
+
+.tiled {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.tiled p {
+    margin: 0;
+    width: fit-content;
+}
+
+.quick-links {
+    padding-top: 20px;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+}
