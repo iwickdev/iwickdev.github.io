@@ -1,5 +1,5 @@
 :root {
-    --background-accent: #1f1f1f;
+    --background-accent: rgb(31, 31, 31, 0.9);
     --text-accent: white;
 
     --global-font-family: Arial, serif;
@@ -18,18 +18,21 @@ html, body {
     color: var(--text-accent);
 
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -50%);
 
-    height: 50%;
-    width: 60%;
+    height: fit-content;
+    width: fit-content;
     min-width: 800px;
 
     display: grid;
-    grid-template-columns: 60% 40%;
     grid-template-areas:
             "summery avatar";
+
+    padding: 25px;
+    border-radius: 10px;
+    background-color: var(--background-accent);
 }
 
 .summery {
@@ -81,8 +84,6 @@ html, body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
-    height: fit-content;
 
     gap: 15px;
 }
