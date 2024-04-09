@@ -24,6 +24,7 @@ html, body {
 
     height: 50%;
     width: 60%;
+    min-width: 800px;
 
     display: grid;
     grid-template-columns: 60% 40%;
