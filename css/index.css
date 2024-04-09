@@ -49,6 +49,10 @@ html, body {
 .avatar-image {
     border-radius: 10px;
     height: 50%;
+    
+    min-height: 150px;
+    max-height: 300px;
+    max-width: 300px;
 }
 
 .tiled {
