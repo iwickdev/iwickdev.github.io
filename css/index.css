@@ -54,7 +54,9 @@ html, body {
 
 .avatar-image {
     border-radius: 10px;
+
     width: 100%;
+    max-width: 320px;
 }
 
 .tiled {
@@ -71,20 +73,16 @@ html, body {
 }
 
 .quick-links {
-    grid-area: avatar;
-
     width: 100%;
+    max-width: 320px;
 
     padding-top: 20px;
 
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     height: fit-content;
 
     gap: 15px;
-}
-
-.quick-links img {
-    width: 100%;
 }
