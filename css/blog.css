@@ -1,0 +1,56 @@
+:root {
+    --background-accent: rgb(31, 31, 31, 0.9);
+    --text-accent: white;
+
+    --global-font-family: Arial, serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-accent);
+
+    display: grid;
+    grid-template-areas: "nav render";
+    grid-template-columns: 0.5fr 2fr;
+}
+
+#nav-bar {
+    background-color: var(--background-accent);
+    grid-area: nav;
+    color: var(--text-accent);
+    font-family: var(--global-font-family);
+
+    min-width: 300px;
+}
+
+#nav-bar .top {
+    padding-top: 10px;
+
+    align-content: center;
+    text-align: center;
+}
+
+#nav-bar img {
+    width: 50%;
+    border-radius: 100px;
+}
+
+#nav-bar p {
+    font-family: var(--global-font-family);
+    padding-left: 10px;
+}
+
+#nav-bar p:hover {
+    cursor: pointer;
+    color: rgb(99, 99, 99)
+}
+
+#blog-area {
+    grid-area: render;
+    padding-left: 10px;
+    padding-right: 50px;
+}
+
+html, body {
+    height: 100%;
+}
