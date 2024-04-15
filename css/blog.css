@@ -31,6 +31,19 @@ body {
     text-align: center;
 }
 
+#nav-bar .top h1 {
+    margin: 0;
+}
+
+#nav-bar .top a {
+    text-decoration: none;
+    color: wheat;
+}
+
+#nav-bar .top a:hover {
+    color: darkgray;
+}
+
 #nav-bar img {
     width: 50%;
     border-radius: 100px;
