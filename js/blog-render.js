@@ -12,16 +12,19 @@ async function renderBlog(page) {
 }
 
 document.querySelectorAll("#nav-bar p").forEach((element) => {
+    let blog_tags_list = element.getAttribute("tags").split(" ")
+    element.innerText += ` (${blog_tags_list.join(', ')})`
+
     element.addEventListener("click", () => {
         let blog_id = element.getAttribute("uuid")
+        let blog_name = element.getAttribute("name")
         let blog_created = element.getAttribute("created")
         let blog_updated = element.getAttribute("updated")
         let blog_tags = element.getAttribute("tags")
 
-
         renderBlog(blog_id).then((value) => {
             render_area.innerHTML = `
-                    <h1>${element.innerText}</h1>
+                    <h1>${blog_name}</h1>
                     <p>Created ${blog_created} / Updated ${blog_updated}</p>
                     <p>${blog_tags}</p>
                     <hr>
@@ -40,7 +43,11 @@ document.querySelectorAll("#nav-bar p").forEach((element) => {
 
 if ( url_arguments.get("blog") ) {
     let elm = document.querySelector(`#nav-bar p[uuid=${url_arguments.get("blog")}]`)
-    if (elm) {elm.click()}
+    if (elm) {
+        elm.click()
+    } else {
+        document.querySelector("#nav-bar p").click()
+    }
 } else {
     document.querySelector("#nav-bar p").click()
 }

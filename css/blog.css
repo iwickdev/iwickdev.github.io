@@ -11,16 +11,17 @@ body {
 
     display: grid;
     grid-template-areas: "nav render";
-    grid-template-columns: 0.5fr 2fr;
 }
 
 #nav-bar {
+    overflow-y: scroll;
+
     background-color: var(--background-accent);
     grid-area: nav;
     color: var(--text-accent);
     font-family: var(--global-font-family);
 
-    min-width: 300px;
+    width: 300px;
 }
 
 #nav-bar .top {
@@ -36,7 +37,12 @@ body {
 }
 
 #nav-bar p {
-    font-family: var(--global-font-family);
+    padding-left: 10px;
+    font-size: 15px;
+    color: #6385ff;
+}
+
+#nav-bar h2 {
     padding-left: 10px;
 }
 
