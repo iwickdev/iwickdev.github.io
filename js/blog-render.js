@@ -2,7 +2,7 @@ const render_area = document.getElementById("blog-area")
 let url_arguments = new URLSearchParams(window.location.search)
 
 async function renderBlog(page) {
-    let response = await fetch(`/blogs/${page}.html`)
+    let response = await fetch(`/blogs/${page}/index.html`)
     let html_content = await response.text()
 
     if (response.status === 404) {
