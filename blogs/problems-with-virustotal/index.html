@@ -1,0 +1,85 @@
+<p>
+    I often get asked or see people ask if something is malicious with a link to a VirusTotal result
+    often with one or two vendors saying the file is malicious even if the file is well known or even
+    distributed and signed from someone like Microsoft. So let's talk about VirusTotal.
+</p>
+
+<p>
+    <b>TL;DR</b> Never take anything from VirusTotal at face value. It does not understand the context of what your uploading
+    and the scanners are not always correct, plus are not being used to their full potential to detect malware.
+
+    Now lets go into details.
+</p>
+
+<h2>The score is not everything</h2>
+<p>
+    <b>ALWAYS</b> look deeper than just the number at the top of the screen. VirusTotal has A-LOT of vendors now,
+    63 at the time of writing this. However not all are equal. While you will see ones you know
+    like BitDefender, Malware-bytes, Kaspersky, etc., you will also see some you have never heard of.
+    There is a good chance you may come across one of these vendors/scanners reporting a file is malicious even if they
+    are potentially the ONLY scanner that does. This is a quick way to tell if something is likely a false positive.
+</p>
+
+<h2>Scanners are not using their full potential</h2>
+<p>
+    VirusTotal is a static analysis site for the most part. This means that all the scanners you see are not executing
+    the file, just looking at the content and attempting to match signatures, hashes, etc. This can cause a malicious
+    file to show up clean on VirusTotal, even if it would be caught by the AV running on your system due to
+    heuristics or other dynamic analysis.
+</p>
+
+<h2>Unrelated YARA Rules</h2>
+<p>
+    Before I can get into this one, let me first define what Yara rules are.
+
+    Yara is a language that allows anyone to create matching conditions on data as "rules". These rules can then be loaded
+    into a Yara interpreter and run on a set of data to determine if it matches the selected rule. It is often used to
+    do static analysis and to find files that contain certain patterns such as import a certain library or make certain
+    system calls.
+</p>
+
+<p>
+    Ok now back to how this applies to VirusTotal, well... VirusTotal allows researchers to upload their Yara rules
+    and use them to search VirusTotal for samples that match. However, these rules may be very generic or apply to loads
+    of applications. You might see them float above your results page in red. Make sure you <b>READ</b> the name and
+    description, it will give you details about what exactly the match is for, which you can use with your context to
+    determine if It's valid to be concerned about or not.
+</p>
+
+<p>
+    For example, you have a "calculator app" and decide to check it with VirusTotal. It has two detections, but
+    you are not sure if it's a false positive or not. However, you see a Yara match for the app making a syscall to
+    elevate its permissions. Now lets think, why would a calculator app need to elevate its permissions?
+    Seems weird right? Exactly. This is how you should use them, if you have an installer application and a Yara rule
+    matches for it dropping files to the temp folder. Well now this time that's a lot more reasonable due to us knowing
+    it's an installer.
+</p>
+
+<img src="/blogs/problems-with-virustotal/yara_rules_example.png" alt="Example of Yara rules detecting Process Monitor">
+<img src="/blogs/problems-with-virustotal/yara_rules_example_2.png" alt="Another example with the Steam installer">
+
+<p>Just because something matches does not mean it's malicious!</p>
+
+<h2>Comments and Ratings</h2>
+<p>
+    Now I am not saying everyone is wrong who posts in there. There are people who post research there that is helpful,
+    however there are many bots that posts automated comments on VirusTotal pages or random people who post ratings that
+    are incorrect or more opinionated than fact. Just because you see something that says its malicious as a comment, does
+    not always mean its correct just like all the other features. You have to take into account the other info on the page.
+</p>
+
+<img src="/blogs/problems-with-virustotal/bot_comments.png" alt="FileScanIO 100/100 rating for Steam installer">
+
+<p>
+    Here is an example of it going on, with FileScanIO (an automated analysis tool). It's giving the official
+    Steam installer a 100/100 malware rating.
+</p>
+
+<h2>In Summery</h2>
+<p>
+    Now with all of that let me say, VirusTotal is not a bad tool. It's an amazing one. However, with every tool it has
+    its problems and although is very accessible is not really for people who don't know anything about malware.
+    It can be easy to be misled into believing something is malware when it's completely safe. Or give you a false sense
+    of security that an application is safe when it's not. Let this be a lesson on why to never take anything you
+    see at face value, especially with analysis tools.
+</p>

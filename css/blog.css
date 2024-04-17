@@ -68,6 +68,8 @@ body {
     grid-area: render;
     padding-left: 10px;
     padding-right: 50px;
+
+    overflow-y: scroll;
 }
 
 html, body {
