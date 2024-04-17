@@ -35,14 +35,14 @@ document.querySelectorAll("#nav-bar p").forEach((element) => {
             window.history.replaceState(
                 {},
                 "IWick Blog",
-                window.location.origin + window.location.pathname + `?blog=${blog_id}`
+                window.location.origin + window.location.pathname + `?name=${blog_id}`
             )
         })
     })
 })
 
-if ( url_arguments.get("blog") ) {
-    let elm = document.querySelector(`#nav-bar p[uuid=${url_arguments.get("blog")}]`)
+if ( url_arguments.get("name") ) {
+    let elm = document.querySelector(`#nav-bar p[uuid=${url_arguments.get("name")}]`)
     if (elm) {
         elm.click()
     } else {
