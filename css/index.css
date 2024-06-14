@@ -43,7 +43,7 @@ html, body {
 
     width: 95%;
 
-    font-family: var(--global-font-family)
+    font-family: var(--global-font-family), serif
 }
 
 .summery h1 {
@@ -66,13 +66,23 @@ html, body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
-    gap: 10px;
 }
 
 .tiled p {
     margin: 0;
+
+    padding-left: 7px;
+    padding-right: 7px;
+
     width: fit-content;
+}
+
+.tiled p:first-child {
+    padding-left: 0;
+}
+
+.tiled p:not(:first-child) {
+    border-left: white 2px solid;
 }
 
 .quick-links {
